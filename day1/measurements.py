@@ -4,13 +4,12 @@ from typing import List
 
 
 def process_measurements(measurements: List[str]) -> int:
-    prev_value: int = float('inf')
+    previous_depth: int = float('inf')
     increased_measurements: int = 0
-    for measurement in measurements:
-        if int(measurement) > prev_value:
-            increased_measurements += 1
 
-        prev_value = int(measurement)
+    for measurement in measurements:
+        increased_measurements = increased_measurements + 1 if int(measurement) > previous_depth else increased_measurements
+        previous_depth = int(measurement)
 
     return increased_measurements
 
@@ -18,7 +17,7 @@ def process_measurements(measurements: List[str]) -> int:
 if __name__ == '__main__':
     print(
         process_measurements(get_data(
-            session='53616c7465645f5fe300aa9818e9994ea9a0fc7bac997a1fab89013376f446dd07a36bf1c043e3b61f7ce3684605ace6',
+            session='<GET THE SESSION TOKEN>',
             day=1,
             year=2021).split('\n'))
     )
