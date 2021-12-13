@@ -4,6 +4,11 @@ from typing import List
 
 
 def process_measurements(measurements: List[str]) -> int:
+    """
+
+    :param measurements: List of input measurements
+    :return: Number of increased measurements
+    """
     previous_depth: int = float('inf')
     increased_measurements: int = 0
 
