@@ -22,7 +22,7 @@ def process_measurements(measurements: List[str]) -> int:
 if __name__ == '__main__':
     print(
         process_measurements(get_data(
-            session='<GET THE SESSION TOKEN>',
+            session='<TOKEN>',
             day=1,
             year=2021).split('\n'))
     )
